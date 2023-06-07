@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 38625905375e7d34091267d36210ffe1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemName: Apple
   _itemID: 0
-  _itemImage: {fileID: 21300000, guid: 1db35a003783e134586e1f4719657727, type: 3}
+  _itemImage: {fileID: 21300000, guid: 38625905375e7d34091267d36210ffe1, type: 3}
   _itemDescription: "\u308A\u3093\u3054"
   _effect: 0
   _timing: 0

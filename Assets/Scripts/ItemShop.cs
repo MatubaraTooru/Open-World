@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemShop : MonoBehaviour
 {
-    [SerializeField] ItemBase[] _itemArray;
+    [SerializeField] GameObject[] _itemArray;
 
     private void Awake()
     {
@@ -22,9 +23,9 @@ public class ItemShop : MonoBehaviour
         {
             var obj = new GameObject($"Button({i})");
             obj.transform.parent = transform;
-            obj.AddComponent<Button>();
+            obj.AddComponent<Button>().onClick.AddListener(OnClicked);
 
-            var image = obj.AddComponent<Image>().sprite = _itemArray[i].Image;
+            var image = obj.AddComponent<Image>().sprite = _itemArray[i].GetComponent<Image>().sprite;
         }
     }
 

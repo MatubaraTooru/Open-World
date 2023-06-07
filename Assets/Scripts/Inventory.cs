@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] List<GameObject> inventory = new List<GameObject>();
+    public GameObject GO { get; set; }
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void GetItem(GameObject go)
+    {
+        inventory.Add(go);
     }
 }
