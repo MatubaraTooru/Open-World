@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] List<GameObject> inventory = new List<GameObject>();
-    public GameObject GO { get; set; }
+    [SerializeField] 
+    private List<ItemParam> inventory = new List<ItemParam>();
     void Start()
     {
         
@@ -16,7 +15,7 @@ public class Inventory : MonoBehaviour
         
     }
 
-    public void GetItem(GameObject go)
+    public void GetItem(ItemParam go)
     {
         inventory.Add(go);
     }
