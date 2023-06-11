@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ItemShop : MonoBehaviour
 {
@@ -22,21 +23,21 @@ public class ItemShop : MonoBehaviour
         {
             var obj = new GameObject($"Button({i})");
             obj.transform.parent = transform;
-            obj.AddComponent<Button>().onClick.AddListener(OnClicked);
 
-            var image = obj.AddComponent<Image>().sprite = _itemData.itemParams[i].Image;
+            var itemID = _itemData.itemParams[i].ID;
+
+            obj.AddComponent<Button>().onClick.AddListener(() => OnClicked(itemID));
+
+            obj.AddComponent<Image>().sprite = _itemData.itemParams[i].Image;
         }
     }
 
-    public void OnClicked()
+    public void OnClicked(int itemID)
     {
-        var image = GetComponent<Image>().sprite;
-        for (int i = 0; i < _itemData.itemParams.Count; i++)
+        var itemParam = _itemData.itemParams.Find(item => item.ID == itemID);
+        if (itemParam != null)
         {
-            if (image == _itemData.itemParams[i].Image)
-            {
-                _playerInventory.GetItem(_itemData.itemParams[i]);
-            }
+            _playerInventory.GetItem(itemParam);
         }
     }
 }

@@ -29,17 +29,16 @@ public class ItemParam
     public int ID { get => _itemID; }
     public Sprite Image { get => _itemImage; }
 
-
-    enum ActionEffect
+    public enum ActionEffect
     {
         Recovery, // 回復
         PowerUp, // 攻撃力上昇
         DefenseUp, // 防御力上昇
     }
 
-    enum ActivationTiming
+    public enum ActivationTiming
     {
-        /// <summary> インベントリにから直接使用し、その瞬間効果が発動する </summary>
+        /// <summary> インベントリから直接使用し、その瞬間効果が発動する </summary>
         Use,
         /// <summary> アイテムをプレイヤーに装備し、アイテムの効果を装備中持続させる</summary>
         Equipment

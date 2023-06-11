@@ -5,18 +5,8 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] 
     private List<ItemParam> inventory = new List<ItemParam>();
-    void Start()
+    public void GetItem(ItemParam item)
     {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
-    public void GetItem(ItemParam go)
-    {
-        inventory.Add(go);
+        inventory.Add(item);
     }
 }
